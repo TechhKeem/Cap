@@ -43,31 +43,31 @@ const defaultFont = localFont({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://cap.so"),
-	title: "Cap — Beautiful screen recordings, owned by you.",
+	metadataBase: new URL("https://look.financekeem.com"),
+	title: "Look by FinanceKeem: screen recordings for training",
 	description:
-		"Cap is the open source alternative to Loom. Lightweight, powerful, and cross-platform. Record and share in seconds.",
+		"Record your screen, camera and voice, then share a link in seconds. Look is FinanceKeem's training and walkthrough video platform.",
 	openGraph: {
-		title: "Cap — Beautiful screen recordings, owned by you.",
+		title: "Look by FinanceKeem: screen recordings for training",
 		description:
-			"Cap is the open source alternative to Loom. Lightweight, powerful, and cross-platform. Record and share in seconds.",
+			"Record your screen, camera and voice, then share a link in seconds. Look is FinanceKeem's training and walkthrough video platform.",
 		type: "website",
-		url: "https://cap.so",
-		siteName: "Cap",
+		url: "https://look.financekeem.com",
+		siteName: "Look",
 		images: [
 			{
 				url: "/api/og",
 				width: 1200,
 				height: 630,
-				alt: "Cap — Beautiful screen recordings, owned by you.",
+				alt: "Look by FinanceKeem: screen recordings for training",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Cap — Beautiful screen recordings, owned by you.",
+		title: "Look by FinanceKeem: screen recordings for training",
 		description:
-			"Cap is the open source alternative to Loom. Lightweight, powerful, and cross-platform. Record and share in seconds.",
+			"Record your screen, camera and voice, then share a link in seconds. Look is FinanceKeem's training and walkthrough video platform.",
 		images: ["/api/og"],
 	},
 };

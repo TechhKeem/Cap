@@ -92,7 +92,7 @@ export function LoginForm() {
 			if (error === "OAuthAccountNotLinked") {
 				setOauthError(true);
 				return toast.error(
-					"This email already has a Cap account. Sign in using your original sign-in method.",
+					"This email already has a Look account. Sign in using your original sign-in method.",
 				);
 			} else if (error === "SsoMissingProfileAttributes") {
 				setShowOrgInput(true);
@@ -101,7 +101,7 @@ export function LoginForm() {
 				return;
 			} else if (error === "DisposableEmail") {
 				return toast.error(
-					"Temporary email addresses can't be used with Cap. Please use your work or personal email.",
+					"Temporary email addresses can't be used with Look. Please use your work or personal email.",
 				);
 			} else if (error === "SsoSessionExpired") {
 				setShowOrgInput(true);
@@ -339,14 +339,14 @@ export function LoginForm() {
 					layout="position"
 					className="text-2xl font-semibold text-gray-12"
 				>
-					Sign in to Cap
+					Sign in to Look
 				</motion.h1>
 				<motion.p
 					key="subtitle"
 					layout="position"
 					className="text-[16px] text-gray-10"
 				>
-					Beautiful screen recordings, owned by you.
+					FinanceKeem training and walkthrough videos.
 				</motion.p>
 			</motion.div>
 			<motion.div layout="position" className="flex flex-col space-y-3">
@@ -476,7 +476,7 @@ export function LoginForm() {
 							className="pt-3 text-xs text-center text-gray-9"
 						>
 							By typing your email and clicking continue, you acknowledge that
-							you have both read and agree to Cap's{" "}
+							you have both read and agree to the{" "}
 							<Link
 								href="/terms"
 								target="_blank"
@@ -588,7 +588,7 @@ const NormalLogin = ({
 					name="email"
 					autoFocus
 					type="email"
-					placeholder={emailSent ? "" : "tim@apple.com"}
+					placeholder={emailSent ? "" : "you@financekeem.com"}
 					autoComplete="email"
 					required
 					value={email}
