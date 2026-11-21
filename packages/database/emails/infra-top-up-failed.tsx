@@ -39,7 +39,7 @@ export function InfraTopUpFailed({
 								src={CAP_LOGO_URL}
 								width="40"
 								height="40"
-								alt="Cap"
+								alt="Look"
 								className="mx-auto my-0"
 							/>
 						</Section>
@@ -48,7 +48,7 @@ export function InfraTopUpFailed({
 						</Heading>
 						<Text className="text-sm leading-6 text-black">
 							We tried to charge your saved card {amount} to top up {appName} on
-							Cap Infra and the payment was declined. No credit was added.
+							Look Infra and the payment was declined. No credit was added.
 						</Text>
 						<Text className="text-sm leading-6 text-black">
 							Auto top-up is now switched off for this app so the card is not

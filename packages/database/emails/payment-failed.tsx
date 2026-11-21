@@ -30,8 +30,8 @@ export function PaymentFailed({
 			<Head />
 			<Preview>
 				{finalAttempt
-					? "Your Cap Pro subscription will be canceled unless we can collect payment"
-					: "We could not collect your Cap Pro payment. Your access is unaffected while we retry."}
+					? "Your Look Pro subscription will be canceled unless we can collect payment"
+					: "We could not collect your Look Pro payment. Your access is unaffected while we retry."}
 			</Preview>
 			<Tailwind>
 				<Body className="mx-auto my-auto bg-gray-1 font-sans">
@@ -41,25 +41,25 @@ export function PaymentFailed({
 								src={CAP_LOGO_URL}
 								width="40"
 								height="40"
-								alt="Cap"
+								alt="Look"
 								className="mx-auto my-0"
 							/>
 						</Section>
 						<Heading className="mx-0 my-7 p-0 text-center text-xl font-semibold text-black">
 							{finalAttempt
-								? "Last chance to keep Cap Pro"
+								? "Last chance to keep Look Pro"
 								: "Your payment didn't go through"}
 						</Heading>
 						<Text className="text-sm leading-6 text-black">
-							We tried to charge your card for Cap Pro but the payment failed.
+							We tried to charge your card for Look Pro but the payment failed.
 							This is usually an expired card or a one-off bank decline.
 						</Text>
 						{finalAttempt ? (
 							<Text className="text-sm leading-6 text-black">
 								This was our last automatic retry. If the payment can't be
 								collected, your subscription will be canceled and you'll lose
-								Pro features like unlimited recording length, Cap AI, and custom
-								domains.
+								Pro features like unlimited recording length, Look AI, and
+								custom domains.
 							</Text>
 						) : (
 							<Text className="text-sm leading-6 text-black">

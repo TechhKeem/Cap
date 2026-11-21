@@ -246,7 +246,7 @@ describe("toggleProSeat", () => {
 			];
 
 			await expect(toggle(true)).rejects.toThrow(
-				"An active Cap Pro subscription is required",
+				"An active Look Pro subscription is required",
 			);
 			expect(updates).toEqual([]);
 		});

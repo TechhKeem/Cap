@@ -317,7 +317,7 @@ export const CapCard = ({
 		try {
 			const dragPreview = document.createElement("div");
 			dragPreview.textContent =
-				draggedIds.length > 1 ? `${draggedIds.length} Caps` : cap.name;
+				draggedIds.length > 1 ? `${draggedIds.length} Looks` : cap.name;
 			dragPreview.className =
 				"px-2 py-1.5 text-sm font-medium rounded-lg shadow-md text-gray-1 bg-gray-12";
 			dragPreview.style.position = "absolute";
@@ -341,7 +341,7 @@ export const CapCard = ({
 		try {
 			await copyRichVideoLink({
 				url: text,
-				title: cap.name || "Cap Recording",
+				title: cap.name || "Look Recording",
 				previewImageUrl: videoPreviewImageUrl(webUrl, cap.id),
 			});
 		} catch (error) {
@@ -649,7 +649,7 @@ export const CapCard = ({
 												duplicateMutation.mutateAsync().then(rejectOnFailure),
 												{
 													loading: "Duplicating cap...",
-													success: "Cap duplicated successfully",
+													success: "Look duplicated successfully",
 													error: "Failed to duplicate cap",
 												},
 											);
@@ -728,7 +728,7 @@ export const CapCard = ({
 											className="flex gap-2 items-center rounded-lg"
 										>
 											<FontAwesomeIcon className="size-3" icon={faTrash} />
-											<p className="text-sm text-gray-12">Delete Cap</p>
+											<p className="text-sm text-gray-12">Delete Look</p>
 										</DropdownMenuItem>
 									)}
 								</>
@@ -753,7 +753,7 @@ export const CapCard = ({
 					<ConfirmationDialog
 						open={confirmOpen}
 						icon={<FontAwesomeIcon icon={faVideo} />}
-						title="Delete Cap"
+						title="Delete Look"
 						description={`Are you sure you want to delete the cap "${cap.name}"? This action cannot be undone.`}
 						confirmLabel={deleteMutation.isPending ? "Deleting..." : "Delete"}
 						cancelLabel="Cancel"

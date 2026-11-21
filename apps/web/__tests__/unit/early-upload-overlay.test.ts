@@ -74,10 +74,10 @@ describe("Early upload overlay", () => {
 		expect(container.textContent).not.toContain(" of ");
 	});
 
-	it("asks to keep Cap open once uploading has stalled", async () => {
+	it("asks to keep Look open once uploading has stalled", async () => {
 		await render({ target: 90, ready: 44, recorded: 120, stalled: true });
 		expect(container.textContent).toContain(
-			"Keep Cap open on the computer that recorded this",
+			"Keep Look open on the computer that recorded this",
 		);
 	});
 });

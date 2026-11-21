@@ -65,7 +65,7 @@ export async function sendDownloadLink(email: string) {
 	try {
 		const delivery = await sendEmail({
 			email: sanitized,
-			subject: "Your Cap download link",
+			subject: "Your Look download link",
 			react: DownloadLink({ email: sanitized }),
 			marketing: true,
 		});

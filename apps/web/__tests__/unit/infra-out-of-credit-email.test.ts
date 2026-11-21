@@ -79,7 +79,7 @@ describe("the out-of-credit email", () => {
 		const text = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
 		expect(text).toContain(
-			"A storage charge for Acme was more than its Cap Infra balance, so the balance is now zero.",
+			"A storage charge for Acme was more than its Look Infra balance, so the balance is now zero.",
 		);
 		expect(text).toContain(
 			"Adding credits brings the app straight back. What it could not pay is not charged afterwards.",

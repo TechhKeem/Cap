@@ -228,7 +228,7 @@ async function loadEditableVideo(
 	if (!userIsPro(user))
 		throw new VideoEditError(
 			"pro_required",
-			"Cap Pro is required to edit videos",
+			"Look Pro is required to edit videos",
 		);
 
 	const [video] = await db()

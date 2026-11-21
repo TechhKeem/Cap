@@ -99,7 +99,7 @@ beforeEach(() => {
 	}));
 });
 
-describe("placing owned Caps in team folders", () => {
+describe("placing owned Looks in team folders", () => {
 	it("adds missing team shares, moves existing shares, and preserves personal placement", async () => {
 		results = [
 			ids.map((id) => ({ id })),
@@ -141,7 +141,7 @@ describe("placing owned Caps in team folders", () => {
 		expect(mocks.revalidate).toHaveBeenCalledWith("/s/[videoId]", "page");
 	});
 
-	it("lets space members place their own Caps without changing other shares", async () => {
+	it("lets space members place their own Looks without changing other shares", async () => {
 		results = [
 			[{ createdById: "creator", memberRole: "member" }],
 			[{ id: ids[0] }],
@@ -230,7 +230,7 @@ describe("placing owned Caps in team folders", () => {
 		expect(writes).toHaveLength(1);
 	});
 
-	it("rejects the whole selection if any Cap is not owned in the active organization", async () => {
+	it("rejects the whole selection if any Look is not owned in the active organization", async () => {
 		results = [[{ id: ids[0] }]];
 		await expect(
 			placeOwnedVideos({
@@ -318,7 +318,7 @@ describe("placing owned Caps in team folders", () => {
 				group.canCreateFolder,
 			]),
 		).toEqual([
-			["My Caps", ["mine"], true],
+			["My Looks", ["mine"], true],
 			["Acme", [folderId], false],
 			["Team space", ["space-folder"], false],
 		]);

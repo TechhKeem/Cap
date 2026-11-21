@@ -54,7 +54,7 @@ async function getOwnerSubscription(
 		!isProSubscription(subscription) ||
 		customerId !== owner.stripeCustomerId
 	) {
-		throw new Error("No matching Cap Pro subscription found");
+		throw new Error("No matching Look Pro subscription found");
 	}
 
 	const subscriptionItem = subscription.items.data[0];
@@ -228,7 +228,7 @@ export async function updateSeatQuantity(
 			});
 		} catch (restoreError) {
 			console.error(
-				"Failed to restore scheduled Cap Pro cancellation",
+				"Failed to restore scheduled Look Pro cancellation",
 				subscription.id,
 				restoreError,
 			);

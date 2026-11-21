@@ -28,7 +28,7 @@ export async function setVideosArchived(input: {
 		: [];
 	if (videoIds.length === 0) return { updated: 0 };
 	if (videoIds.length > MAX_ARCHIVE_ITEMS)
-		throw new Error(`You can archive up to ${MAX_ARCHIVE_ITEMS} Caps at once`);
+		throw new Error(`You can archive up to ${MAX_ARCHIVE_ITEMS} Looks at once`);
 	const archived = input.archived === true;
 
 	const result = await db()

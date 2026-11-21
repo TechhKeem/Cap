@@ -59,11 +59,11 @@ describe("email config", () => {
 
 		const result = await sendEmail({
 			...message,
-			fromOverride: "Cap Support <richie@send.cap.so>",
+			fromOverride: "Look Support <richie@send.cap.so>",
 		});
 
 		expect(mocks.send.mock.calls[0]?.[0].from).toBe(
-			"Cap Support <richie@send.cap.so>",
+			"Look Support <richie@send.cap.so>",
 		);
 		expect(result).toEqual({ data: { id: "email_2" }, error: null });
 	});
@@ -82,7 +82,7 @@ describe("email config", () => {
 		},
 	);
 
-	it("uses the Cap Cloud sender when explicitly enabled", async () => {
+	it("uses the Look Cloud sender when explicitly enabled", async () => {
 		mocks.build.NEXT_PUBLIC_IS_CAP = "true";
 		mocks.env.RESEND_API_KEY = "re_test";
 		mocks.send.mockResolvedValue({ data: { id: "cloud_email" }, error: null });
@@ -91,7 +91,7 @@ describe("email config", () => {
 		await sendEmail(message);
 
 		expect(mocks.send.mock.calls[0]?.[0].from).toBe(
-			"Cap Auth <no-reply@auth.cap.so>",
+			"Look Auth <no-reply@auth.cap.so>",
 		);
 	});
 

@@ -146,13 +146,13 @@ describe("desktop personal S3 config", () => {
 		expect(JSON.stringify(warn.mock.calls)).not.toContain("synthetic-secret");
 	});
 
-	it("requires Pro on Cap Cloud with the desktop error shape", async () => {
+	it("requires Pro on Look Cloud with the desktop error shape", async () => {
 		state.user.stripeSubscriptionStatus = null;
 		const response = await save("https://s3.example.com");
 		expect(response.status).toBe(403);
 		expect(await response.json()).toEqual({
-			error: "Cap Pro is required to use custom storage",
-			details: "Cap Pro is required to use custom storage",
+			error: "Look Pro is required to use custom storage",
+			details: "Look Pro is required to use custom storage",
 		});
 		expect(state.inserts).toHaveLength(0);
 		expect(warn).toHaveBeenCalledWith(
@@ -161,13 +161,13 @@ describe("desktop personal S3 config", () => {
 		);
 	});
 
-	it("requires https on Cap Cloud", async () => {
+	it("requires https on Look Cloud", async () => {
 		const response = await save("http://s3.example.com");
 		expect(response.status).toBe(400);
 		expect(state.inserts).toHaveLength(0);
 	});
 
-	it("rejects IP literal endpoints on Cap Cloud", async () => {
+	it("rejects IP literal endpoints on Look Cloud", async () => {
 		const response = await save("https://93.184.216.34");
 		expect(response.status).toBe(400);
 		expect(state.inserts).toHaveLength(0);
@@ -202,13 +202,13 @@ describe("desktop personal S3 config", () => {
 		expect(state.inserts).toHaveLength(0);
 	});
 
-	it("requires Pro to test a connection on Cap Cloud", async () => {
+	it("requires Pro to test a connection on Look Cloud", async () => {
 		state.user.stripeSubscriptionStatus = null;
 		const response = await testConnection("https://s3.example.com");
 		expect(response.status).toBe(403);
 		expect(await response.json()).toEqual({
-			error: "Cap Pro is required to use custom storage",
-			details: "Cap Pro is required to use custom storage",
+			error: "Look Pro is required to use custom storage",
+			details: "Look Pro is required to use custom storage",
 		});
 		expect(warn).toHaveBeenCalledWith(
 			"[custom-storage] config attempt",

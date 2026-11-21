@@ -19,8 +19,8 @@ export const homepageSchema = {
 			logo: {
 				"@type": "ImageObject",
 				url: "https://cap.so/cap-logo.png",
-				width: 1440,
-				height: 480,
+				width: 512,
+				height: 512,
 			},
 			sameAs: [
 				"https://github.com/CapSoftware/Cap",

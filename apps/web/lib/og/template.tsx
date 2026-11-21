@@ -10,8 +10,8 @@ import { OG_MONO, OG_SANS, OG_SERIF } from "@/lib/og/fonts";
 export const OG_WIDTH = 1200;
 export const OG_HEIGHT = 630;
 
-export const OG_BLUE = "#4785FF";
-export const OG_BLUE_LIGHT = "#ADC9FF";
+export const OG_BLUE = "#30A46C";
+export const OG_BLUE_LIGHT = "#ADDDC0";
 export const OG_INK = "#111111";
 export const OG_INK_SOFT = "rgba(17,17,17,0.74)";
 export const OG_INK_MUTED = "rgba(17,17,17,0.5)";
@@ -164,14 +164,18 @@ export const MeshFrame = ({
 // concentric circles at (20,20), r 16 / 13 / 10. Returned as an array —
 // satori drops React fragments nested inside <svg>.
 const logoMark = () => [
-	<circle key="o" cx="20" cy="20" r="16" fill={OG_BLUE} />,
-	<circle key="m" cx="20" cy="20" r="13" fill={OG_BLUE_LIGHT} />,
-	<circle key="i" cx="20" cy="20" r="10" fill="white" />,
+	<rect key="b" width="40" height="40" rx="10" fill="#20242D" />,
+	<path
+		key="e"
+		d="M7 20C10.5 13.5 15 10.5 20 10.5S29.5 13.5 33 20C29.5 26.5 25 29.5 20 29.5S10.5 26.5 7 20Z"
+		stroke="#F6F7F9"
+		strokeWidth="2.6"
+		strokeLinejoin="round"
+		fill="none"
+	/>,
+	<circle key="p" cx="20" cy="20" r="5.2" fill={OG_BLUE} />,
+	<circle key="g" cx="20" cy="20" r="2" fill="#F6F7F9" />,
 ];
-
-// The drawn "Cap" wordmark path from packages/ui Logo.tsx (viewBox 0 0 120 40).
-const WORDMARK_PATH =
-	"M58.416 30.448c-5.404 0-9.212-3.864-9.212-10.36 0-6.384 3.668-10.416 9.268-10.416 5.068 0 7.784 2.66 8.624 7.168l-3.808.196c-.476-2.604-2.072-4.2-4.816-4.2-3.388 0-5.488 2.828-5.488 7.252 0 4.48 2.156 7.196 5.46 7.196 2.94 0 4.508-1.708 4.956-4.564l3.808.196c-.784 4.676-3.752 7.532-8.792 7.532zm16.23-.112c-3.137 0-5.209-1.484-5.209-4.088 0-2.576 1.596-3.948 4.872-4.592l4.956-.98c0-2.1-.98-3.192-2.856-3.192-1.764 0-2.716.812-3.052 2.324l-3.668-.168c.588-3.136 2.996-4.928 6.72-4.928 4.256 0 6.44 2.24 6.44 6.216v5.432c0 .812.28 1.036.84 1.036h.476V30c-.224.056-.812.112-1.288.112-1.624 0-2.828-.588-3.136-2.436-.728 1.596-2.632 2.66-5.096 2.66zm.727-2.604c2.38 0 3.892-1.512 3.892-3.78v-.84l-3.864.784c-1.596.308-2.24.98-2.24 2.016 0 1.176.784 1.82 2.212 1.82zM86.874 34.2V15.048h3.444l.056 2.212c.868-1.652 2.52-2.548 4.48-2.548 4.256 0 6.356 3.5 6.356 7.812s-2.128 7.812-6.384 7.812c-1.904 0-3.556-.924-4.368-2.38V34.2h-3.584zm7.112-6.776c2.184 0 3.5-1.82 3.5-4.9s-1.316-4.9-3.5-4.9-3.528 1.652-3.528 4.9 1.316 4.9 3.528 4.9z";
 
 export const CapAppIcon = ({ size }: { size: number }) => (
 	<div
@@ -208,17 +212,35 @@ export const CapWordmark = ({ height = 52 }: { height?: number }) => {
 	);
 };
 
+const wordStroke = (color: string) => ({
+	fill: "none",
+	stroke: color,
+	strokeWidth: 4.2,
+	strokeLinecap: "round" as const,
+	strokeLinejoin: "round" as const,
+});
+
 /** The in-app logo — bare mark + wordmark, as the main window renders it. */
 const CapFullLogo = ({ height, color }: { height: number; color: string }) => (
 	<svg
 		role="img"
-		aria-label="Cap"
+		aria-label="Look"
 		width={Math.round((height * 104) / 40)}
 		height={height}
 		viewBox="0 0 104 40"
 	>
 		{logoMark()}
-		<path fill={color} d={WORDMARK_PATH} />
+		{[
+			<path key="l" d="M50 10.5V29.5" {...wordStroke(color)} />,
+			<circle key="o1" cx="62" cy="23" r="6.3" {...wordStroke(color)} />,
+			<circle key="o2" cx="78.5" cy="23" r="6.3" {...wordStroke(color)} />,
+			<path
+				key="k"
+				d="M92 10.5V29.5M100.5 16.8L93.6 23.4M95.6 21.6L101 29.5"
+				{...wordStroke(color)}
+			/>,
+			<circle key="d" cx="78.5" cy="23" r="2.2" fill={OG_BLUE} />,
+		]}
 	</svg>
 );
 
@@ -825,7 +847,7 @@ const MenuBar = () => (
 		})}
 	>
 		<AppleGlyph size={15} />
-		<span style={{ fontWeight: 600 }}>Cap</span>
+		<span style={{ fontWeight: 600 }}>Look</span>
 		<span style={{ fontWeight: 400 }}>File</span>
 		<span style={{ fontWeight: 400 }}>Edit</span>
 		<span style={{ fontWeight: 400 }}>View</span>

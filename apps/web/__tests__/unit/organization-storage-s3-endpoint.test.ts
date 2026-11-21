@@ -134,7 +134,7 @@ describe("organization storage S3 endpoint policy", () => {
 		"http://127.0.0.1:9000",
 		"http://localhost:9000",
 		"http://[::1]:9000",
-	])("refuses to save %s on Cap Cloud", async (endpoint) => {
+	])("refuses to save %s on Look Cloud", async (endpoint) => {
 		await expect(saveOrganizationS3Config(input(endpoint))).rejects.toThrow(
 			blockedS3EndpointMessage,
 		);
@@ -145,7 +145,7 @@ describe("organization storage S3 endpoint policy", () => {
 		"http://169.254.169.254",
 		"http://10.0.0.5",
 		"http://minio.localhost",
-	])("refuses to test %s on Cap Cloud", async (endpoint) => {
+	])("refuses to test %s on Look Cloud", async (endpoint) => {
 		await expect(testOrganizationS3Config(input(endpoint))).rejects.toThrow(
 			blockedS3EndpointMessage,
 		);
@@ -153,7 +153,7 @@ describe("organization storage S3 endpoint policy", () => {
 		expect(state.send).not.toHaveBeenCalled();
 	});
 
-	it("saves public and default endpoints on Cap Cloud", async () => {
+	it("saves public and default endpoints on Look Cloud", async () => {
 		await expect(
 			saveOrganizationS3Config(input("https://s3.example.com")),
 		).resolves.toEqual({ success: true });
@@ -163,7 +163,7 @@ describe("organization storage S3 endpoint policy", () => {
 		expect(state.insert).toHaveBeenCalledTimes(2);
 	});
 
-	it("tests public endpoints through public-only agents on Cap Cloud", async () => {
+	it("tests public endpoints through public-only agents on Look Cloud", async () => {
 		await expect(
 			testOrganizationS3Config(input("https://8.8.8.8")),
 		).resolves.toEqual({ success: true });
@@ -204,7 +204,7 @@ describe("organization storage S3 endpoint policy", () => {
 		"https://bucket.trycloudflare.com",
 		"https://ngrok-free.app",
 		"https://x.a.pinggy.io",
-	])("refuses to save restricted host %s on Cap Cloud", async (endpoint) => {
+	])("refuses to save restricted host %s on Look Cloud", async (endpoint) => {
 		await expect(saveOrganizationS3Config(input(endpoint))).rejects.toThrow(
 			blockedS3EndpointMessage,
 		);
@@ -217,7 +217,7 @@ describe("organization storage S3 endpoint policy", () => {
 		).resolves.toEqual({ success: true });
 	});
 
-	it("requires https endpoints when saving on Cap Cloud", async () => {
+	it("requires https endpoints when saving on Look Cloud", async () => {
 		await expect(
 			saveOrganizationS3Config(input("http://s3.example.com")),
 		).rejects.toThrow(customStorageHttpsRequiredMessage);
@@ -229,7 +229,7 @@ describe("organization storage S3 endpoint policy", () => {
 		await expect(
 			saveOrganizationS3Config(input("https://s3.example.com")),
 		).rejects.toThrow(
-			"Cap Pro is required to manage organization integrations",
+			"Look Pro is required to manage organization integrations",
 		);
 		expect(state.insert).not.toHaveBeenCalled();
 	});
