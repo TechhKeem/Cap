@@ -14,7 +14,7 @@ export const CUSTOM_STORAGE_SAVE_LIMIT = 5;
 export const CUSTOM_STORAGE_SAVE_WINDOW_MS = 60 * 60 * 1000;
 
 export const customStorageProRequiredMessage =
-	"Cap Pro is required to use custom storage";
+	"Look Pro is required to use custom storage";
 export const customStorageHttpsRequiredMessage =
 	"Custom storage endpoints must use https://";
 export const customStorageRateLimitMessage =

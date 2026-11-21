@@ -213,7 +213,7 @@ export default function OtherStats({ data, isLoading }: OtherStatsProps) {
 					tabs={[
 						{
 							id: "caps",
-							label: "Top Caps",
+							label: "Top Looks",
 							rows: topCaps.map((row, i) => ({
 								key: row.id ?? `${row.name}-${i}`,
 								label: row.name,
@@ -233,8 +233,8 @@ export default function OtherStats({ data, isLoading }: OtherStatsProps) {
 					isLoading={isLoading}
 					empty={{
 						doodle: <StackDoodle />,
-						title: "No Caps watched yet",
-						body: "Your most watched Caps will line up here.",
+						title: "No Looks watched yet",
+						body: "Your most watched Looks will line up here.",
 					}}
 				/>
 			)}

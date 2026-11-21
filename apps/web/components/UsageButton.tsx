@@ -26,7 +26,7 @@ export const UsageButton = memo(
 				return (
 					<Tooltip
 						position="right"
-						content="Cap Pro. Unlimited shareable links."
+						content="Look Pro. Unlimited shareable links."
 					>
 						<Link
 							className="flex justify-center mx-auto w-full"
@@ -54,7 +54,7 @@ export const UsageButton = memo(
 					</span>
 					<span className="flex flex-col min-w-0">
 						<span className="text-sm font-medium leading-tight text-gray-12">
-							Cap Pro
+							Look Pro
 						</span>
 						<span className="text-xs leading-tight truncate text-gray-10">
 							Unlimited shareable links

@@ -24,7 +24,7 @@ export default function VideoNotFound() {
 		>
 			<PaperActions>
 				<a className={styles.cta} href={homeHref}>
-					Go to Cap
+					Go to Look
 				</a>
 			</PaperActions>
 		</PaperState>

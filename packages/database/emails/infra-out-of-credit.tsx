@@ -29,7 +29,7 @@ export function InfraOutOfCredit({
 		<Html>
 			<Head />
 			<Preview>
-				{`${appName} is out of Cap Infra credit. Playback pauses on ${pausesOn}.`}
+				{`${appName} is out of Look Infra credit. Playback pauses on ${pausesOn}.`}
 			</Preview>
 			<Tailwind>
 				<Body className="mx-auto my-auto bg-gray-1 font-sans">
@@ -39,7 +39,7 @@ export function InfraOutOfCredit({
 								src={CAP_LOGO_URL}
 								width="40"
 								height="40"
-								alt="Cap"
+								alt="Look"
 								className="mx-auto my-0"
 							/>
 						</Section>
@@ -47,7 +47,7 @@ export function InfraOutOfCredit({
 							{appName} is out of credit
 						</Heading>
 						<Text className="text-sm leading-6 text-black">
-							A storage charge for {appName} was more than its Cap Infra
+							A storage charge for {appName} was more than its Look Infra
 							balance, so the balance is now zero.
 						</Text>
 						<Text className="text-sm leading-6 text-black">

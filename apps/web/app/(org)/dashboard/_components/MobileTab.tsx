@@ -35,7 +35,7 @@ const Tabs = [
 	{
 		icon: <CapIcon size={25} />,
 		href: "/dashboard/caps",
-		label: "My Caps",
+		label: "My Looks",
 		match: ["/dashboard/caps", "/dashboard/folder"],
 	},
 	{

@@ -235,13 +235,13 @@ const createProps = (
 const expectChromeVisible = (container: HTMLElement) => {
 	expect(container.textContent).toContain("Test video");
 	expect(
-		container.querySelector('[aria-label="Powered by Cap"]'),
+		container.querySelector('[aria-label="Powered by Look"]'),
 	).not.toBeNull();
 };
 
 const expectChromeHidden = (container: HTMLElement) => {
 	expect(container.textContent).not.toContain("Test video");
-	expect(container.querySelector('[aria-label="Powered by Cap"]')).toBeNull();
+	expect(container.querySelector('[aria-label="Powered by Look"]')).toBeNull();
 };
 
 beforeAll(async () => {
@@ -353,7 +353,7 @@ describe("EmbedVideo playback chrome", () => {
 	it.each([
 		["an asynchronously mounted MP4", { type: "desktopMP4" } as const],
 		["an HLS video", { type: "MediaConvert" } as const],
-	])("hides the title and Cap branding when %s plays", async (_, source) => {
+	])("hides the title and Look branding when %s plays", async (_, source) => {
 		const container = document.createElement("div");
 		document.body.append(container);
 		const root = createRoot(container);
@@ -503,7 +503,7 @@ const brandingCases: {
 		expected: null,
 	},
 	{
-		name: "custom organization logo with Cap branding hidden",
+		name: "custom organization logo with Look branding hidden",
 		input: {
 			owner: { isPro: true },
 			orgSettings: {
@@ -586,7 +586,7 @@ describe.each([
 			const expectBranding = () => {
 				expect(container.textContent).toContain("Test video");
 				expect(
-					Boolean(container.querySelector('[aria-label="Powered by Cap"]')),
+					Boolean(container.querySelector('[aria-label="Powered by Look"]')),
 				).toBe(expected === "cap");
 				expect(Boolean(container.querySelector("[data-cap-logo]"))).toBe(
 					expected === "cap",

@@ -34,7 +34,7 @@ export type SsoAuthContext = {
 export function getWorkOS() {
 	const { WORKOS_API_KEY, WORKOS_CLIENT_ID } = serverEnv();
 	if (!WORKOS_API_KEY || !WORKOS_CLIENT_ID) {
-		throw new Error("SAML SSO is not configured. Please contact Cap support.");
+		throw new Error("SAML SSO is not configured. Please contact Look support.");
 	}
 	return new WorkOS(WORKOS_API_KEY, {
 		clientId: WORKOS_CLIENT_ID,

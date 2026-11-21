@@ -112,14 +112,14 @@ export default function Header({
 		? filteredSpaces?.find((s) => s.id === selectedSpaceId)
 		: null;
 
-	const myCapsLabel = user?.name ? `${user.name}'s Caps` : "My Caps";
+	const myCapsLabel = user?.name ? `${user.name}'s Looks` : "My Looks";
 	const displayName = selectedSpace ? selectedSpace.name : myCapsLabel;
 	const displayIcon = selectedSpace
 		? selectedSpace.iconUrl
 		: user?.imageUrl || selectedOrg?.organization.iconUrl || undefined;
 	const displayIconName = selectedSpace
 		? selectedSpace.name
-		: user?.name || selectedOrg?.organization.name || "My Caps";
+		: user?.name || selectedOrg?.organization.name || "My Looks";
 
 	const selectValue = selectedSpaceId
 		? `space:${selectedSpaceId}`

@@ -95,9 +95,9 @@ function getFolderScope(
 
 function normalizeVideoIds(videoIds: Video.VideoId[]) {
 	const ids = [...new Set(videoIds)];
-	if (ids.length === 0) throw new Error("Select at least one Cap to move");
+	if (ids.length === 0) throw new Error("Select at least one Look to move");
 	if (ids.length > MAX_MOVE_ITEMS) {
-		throw new Error(`You can move up to ${MAX_MOVE_ITEMS} Caps at once`);
+		throw new Error(`You can move up to ${MAX_MOVE_ITEMS} Looks at once`);
 	}
 	return ids;
 }
@@ -208,7 +208,7 @@ export async function getOwnedVideoMoveDestinations(
 	return [
 		{
 			location: { type: "personal" },
-			name: "My Caps",
+			name: "My Looks",
 			folders: pick(null),
 			canCreateFolder: creatable,
 		},
@@ -315,7 +315,7 @@ export async function placeOwnedVideos({
 			.orderBy(asc(videos.id))
 			.for("update");
 		if (ownedVideos.length !== ids.length)
-			throw new Error("One or more Caps cannot be moved");
+			throw new Error("One or more Looks cannot be moved");
 		if (folderId) {
 			const [folder] = await tx
 				.select({ id: folders.id })
@@ -440,7 +440,7 @@ export async function moveVideos({
 				);
 
 			if (new Set(movableVideos.map((video) => video.id)).size !== ids.length) {
-				throw new Error("One or more Caps cannot be moved");
+				throw new Error("One or more Looks cannot be moved");
 			}
 
 			await tx
@@ -468,7 +468,7 @@ export async function moveVideos({
 				);
 
 			if (movableVideos.length !== ids.length) {
-				throw new Error("One or more Caps cannot be moved");
+				throw new Error("One or more Looks cannot be moved");
 			}
 
 			await tx
@@ -494,7 +494,7 @@ export async function moveVideos({
 			);
 
 		if (movableVideos.length !== ids.length) {
-			throw new Error("One or more Caps cannot be moved");
+			throw new Error("One or more Looks cannot be moved");
 		}
 
 		await tx

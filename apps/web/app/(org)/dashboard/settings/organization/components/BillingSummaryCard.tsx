@@ -54,7 +54,7 @@ export function BillingSummaryCard() {
 		return (
 			<SettingsRow
 				icon={icon}
-				title="Cap Pro"
+				title="Look Pro"
 				description="Loading your plan..."
 			/>
 		);
@@ -74,8 +74,8 @@ export function BillingSummaryCard() {
 		return (
 			<SettingsRow
 				icon={icon}
-				title="Upgrade to Cap Pro"
-				description="Get unlimited sharing, custom domains, Cap AI, and more."
+				title="Upgrade to Look Pro"
+				description="Get unlimited sharing, custom domains, Look AI, and more."
 				control={
 					<Button
 						type="button"

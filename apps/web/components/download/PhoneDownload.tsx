@@ -53,7 +53,7 @@ const EmailDownloadLink = ({ sourcePage }: { sourcePage: string }) => {
 		return (
 			<output className={`${HINT} block text-center text-[#111111]`}>
 				Sent to <span className="font-medium">{sentTo}</span>. Open it on your
-				computer to install Cap.
+				computer to install Look.
 			</output>
 		);
 	}
@@ -108,7 +108,7 @@ export const PhoneDownload = ({
 			)}
 		>
 			<p className={`${HINT} text-center`}>
-				Cap runs on Mac, Windows and Linux. Send the link to your computer.
+				Look runs on Mac, Windows and Linux. Send the link to your computer.
 			</p>
 			{canEmail ? (
 				<EmailDownloadLink sourcePage={sourcePage} />

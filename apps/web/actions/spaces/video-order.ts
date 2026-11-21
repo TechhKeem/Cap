@@ -74,7 +74,7 @@ export async function reorderSpaceVideos(input: {
 		: [];
 	if (videoIds.length === 0) throw new Error("Nothing to move");
 	if (videoIds.length > MAX_REORDER_ITEMS)
-		throw new Error(`You can reorder up to ${MAX_REORDER_ITEMS} Caps at once`);
+		throw new Error(`You can reorder up to ${MAX_REORDER_ITEMS} Looks at once`);
 	if (!isPlacement(input.placement)) throw new Error("Unknown position");
 	const placement = input.placement;
 	const id = await requireSpaceManager(input.spaceId);

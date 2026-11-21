@@ -8,11 +8,11 @@ import { setVideosArchived } from "@/actions/videos/archive";
 import { chunkIds, MAX_ARCHIVE_ITEMS } from "@/lib/video-archive";
 
 const capsLabel = (count: number) =>
-	`${count.toLocaleString("en-US")} Cap${count === 1 ? "" : "s"}`;
+	`${count.toLocaleString("en-US")} Look${count === 1 ? "" : "s"}`;
 
 class PartialArchiveError extends Error {
 	constructor(readonly doneIds: Video.VideoId[]) {
-		super("Some Caps were not updated");
+		super("Some Looks were not updated");
 	}
 }
 

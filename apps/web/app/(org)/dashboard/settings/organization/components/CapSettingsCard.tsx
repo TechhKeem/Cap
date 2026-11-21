@@ -84,9 +84,9 @@ const options: Array<{
 		pro: true,
 	},
 	{
-		label: "Show Cap logo",
+		label: "Show Look logo",
 		value: "hideShareableLinkCapLogo",
-		description: "Show Cap branding at the top of shareable links",
+		description: "Show Look branding at the top of shareable links",
 		pro: true,
 	},
 	{
@@ -213,8 +213,8 @@ const OrganizationCapSettings = ({
 						if (changedKey === "hideShareableLinkCapLogo") {
 							toast.success(
 								debouncedUpdateSettings[changedKey]
-									? "Cap logo hidden"
-									: "Cap logo shown",
+									? "Look logo hidden"
+									: "Look logo shown",
 							);
 						} else {
 							const isDisabled = Boolean(debouncedUpdateSettings[changedKey]);

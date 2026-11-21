@@ -80,7 +80,7 @@ export async function updateSpace(formData: FormData) {
 	) {
 		return {
 			success: false,
-			error: "Upgrade to Cap Pro to create a public collection link",
+			error: "Upgrade to Look Pro to create a public collection link",
 		};
 	}
 

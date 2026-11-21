@@ -81,7 +81,7 @@ describe("DirectorySyncCard", () => {
 		expect(markup).toContain("42 members synced");
 		expect(markup).toContain("Manage directory sync");
 		expect(markup).toContain("Remove 12 members");
-		expect(markup).toContain("Cap retries automatically");
+		expect(markup).toContain("Look retries automatically");
 		expect(markup).toContain(">Active<");
 	});
 });

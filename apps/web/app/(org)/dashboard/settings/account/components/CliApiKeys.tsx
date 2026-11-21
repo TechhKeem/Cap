@@ -110,13 +110,13 @@ export const CliApiKeys = ({
 	});
 
 	return (
-		<SettingsSection title="Cap CLI access">
+		<SettingsSection title="Look CLI access">
 			<SettingsCard>
 				<SettingsRow
 					title="API keys"
 					description={
 						<>
-							API keys authenticate the Cap CLI in environments without a
+							API keys authenticate the Look CLI in environments without a
 							browser, such as CI runners and remote sandboxes. Keys created by{" "}
 							<code className="px-1 py-0.5 text-xs rounded bg-gray-3">
 								cap auth login
@@ -268,7 +268,7 @@ export const CliApiKeys = ({
 				<DialogContent>
 					<DialogHeader
 						icon={<KeyRound className="size-4" />}
-						description="Cap stores only a hash of this key, so it cannot be shown again."
+						description="Look stores only a hash of this key, so it cannot be shown again."
 					>
 						<DialogTitle>Copy your API key</DialogTitle>
 					</DialogHeader>
@@ -278,8 +278,8 @@ export const CliApiKeys = ({
 						)}
 						<p className="text-sm text-gray-11">
 							Set it as <code>CAP_API_KEY</code> (or{" "}
-							<code>CAP_AGENT_TOKEN</code>) in the environment where the Cap CLI
-							runs, then verify with <code>cap auth status --json</code>.
+							<code>CAP_AGENT_TOKEN</code>) in the environment where the Look
+							CLI runs, then verify with <code>cap auth status --json</code>.
 						</p>
 					</div>
 					<DialogFooter>

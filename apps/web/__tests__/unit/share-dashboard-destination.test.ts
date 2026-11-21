@@ -101,16 +101,16 @@ const access = (
 });
 
 describe("pickShareDashboardDestination", () => {
-	it("sends the owner back to My Caps", () => {
+	it("sends the owner back to My Looks", () => {
 		expect(pickShareDashboardDestination(access({ isOwner: true }))).toEqual({
 			kind: "caps",
 			href: "/dashboard/caps",
-			label: "My Caps",
+			label: "My Looks",
 			switchOrganizationId: null,
 		});
 	});
 
-	it("sends the owner back to the folder the Cap lives in", () => {
+	it("sends the owner back to the folder the Look lives in", () => {
 		expect(
 			pickShareDashboardDestination(
 				access({
@@ -139,7 +139,7 @@ describe("pickShareDashboardDestination", () => {
 		).toBe("caps");
 	});
 
-	it("sends a space member to the space the Cap was shared into", () => {
+	it("sends a space member to the space the Look was shared into", () => {
 		expect(
 			pickShareDashboardDestination(
 				access({
@@ -195,7 +195,7 @@ describe("pickShareDashboardDestination", () => {
 		).toBe("/dashboard/spaces/org-active");
 	});
 
-	it("offers nothing to a signed-in viewer the Cap was never shared with", () => {
+	it("offers nothing to a signed-in viewer the Look was never shared with", () => {
 		expect(pickShareDashboardDestination(access({}))).toBeNull();
 	});
 
@@ -325,7 +325,7 @@ describe("getShareDashboardDestination", () => {
 		).toBe(false);
 	});
 
-	it("checks the owner's membership before switching to the Cap's organization", async () => {
+	it("checks the owner's membership before switching to the Look's organization", async () => {
 		rowsFor = { organizationMembers: [{ id: "membership-1" }] };
 
 		expect(
@@ -343,7 +343,7 @@ describe("getShareDashboardDestination", () => {
 		).toBe(true);
 	});
 
-	it("does not switch when the owner has left the Cap's organization", async () => {
+	it("does not switch when the owner has left the Look's organization", async () => {
 		expect(
 			await resolve(OWNER, "org-other" as Organisation.OrganisationId),
 		).toMatchObject({

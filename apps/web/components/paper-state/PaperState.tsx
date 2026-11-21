@@ -21,7 +21,7 @@ export function PaperState({
 	return (
 		<div className={styles.page}>
 			<header className={styles.brand}>
-				<a href={homeHref} className={styles.brandLink} aria-label="Cap">
+				<a href={homeHref} className={styles.brandLink} aria-label="Look">
 					<CapWordmark />
 				</a>
 			</header>

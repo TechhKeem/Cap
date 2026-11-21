@@ -196,7 +196,7 @@ export async function createProCheckout(input: {
 
 		return { ok: true, clientSecret: session.client_secret };
 	} catch (error) {
-		console.error("Failed to create Cap Pro checkout session:", error);
+		console.error("Failed to create Look Pro checkout session:", error);
 		return { ok: false, reason: "unavailable" };
 	}
 }
@@ -255,7 +255,7 @@ export async function changeProCheckoutPlan(input: {
 
 		return { ok: true };
 	} catch (error) {
-		console.error("Failed to change Cap Pro checkout plan:", error);
+		console.error("Failed to change Look Pro checkout plan:", error);
 		return { ok: false };
 	}
 }
@@ -305,7 +305,7 @@ export async function setProCheckoutUsEin(input: {
 
 		return { ok: true };
 	} catch (error) {
-		console.error("Failed to set Cap Pro checkout EIN:", error);
+		console.error("Failed to set Look Pro checkout EIN:", error);
 		return { ok: false };
 	}
 }

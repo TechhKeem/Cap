@@ -30,7 +30,7 @@ export function DownloadLink({ email = "" }: { email: string }) {
 	return (
 		<Html>
 			<Head />
-			<Preview>Open this on your computer to install Cap.</Preview>
+			<Preview>Open this on your computer to install Look.</Preview>
 			<Tailwind>
 				<Body className="mx-auto my-auto bg-gray-1 font-sans">
 					<Container className="mx-auto my-10 max-w-[500px] rounded border border-solid border-gray-200 px-10 py-5">
@@ -39,15 +39,15 @@ export function DownloadLink({ email = "" }: { email: string }) {
 								src={CAP_LOGO_URL}
 								width="40"
 								height="40"
-								alt="Cap"
+								alt="Look"
 								className="mx-auto my-0"
 							/>
 						</Section>
 						<Heading className="mx-0 my-7 p-0 text-center text-xl font-semibold text-black">
-							Your Cap download link
+							Your Look download link
 						</Heading>
 						<Text className="text-sm leading-6 text-black">
-							Open this email on your computer and pick your platform. Cap
+							Open this email on your computer and pick your platform. Look
 							downloads straight away and the page walks you through installing
 							it.
 						</Text>

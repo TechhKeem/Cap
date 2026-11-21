@@ -118,8 +118,8 @@ export const buildShareVideoMetadata = ({
 		height: 630,
 		type: "image/png",
 	};
-	const title = `${name} | Cap Recording`;
-	const description = "Watch this video on Cap";
+	const title = `${name} | Look Recording`;
+	const description = "Watch this video on Look";
 	const hasDimensions =
 		width != null && height != null && width > 0 && height > 0;
 	const playerWidth = hasDimensions ? width : PLAYER_WIDTH;
@@ -156,7 +156,7 @@ export const buildShareVideoMetadata = ({
 		openGraph: {
 			type: "video.other",
 			url: urls.shareUrl,
-			siteName: "Cap",
+			siteName: "Look",
 			title,
 			description,
 			ttl: 300,
